@@ -1,0 +1,92 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background-color: #eaf6ff;
+    color: #222;
+}
+
+/* Topo */
+header {
+    background-color: #74b6ff;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 28px;
+    font-weight: bold;
+    color: #2e4cb8;
+}
+
+.logo img {
+    width: 40px;
+    margin-right: 10px;
+}
+
+.menu {
+    display: flex;
+    gap: 15px;
+}
+
+.menu button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background-color: #9dd4ff;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* Conteúdo principal */
+.container {
+    display: flex;
+    padding: 50px;
+    justify-content: space-between;
+}
+
+.left {
+    width: 50%;
+}
+
+.left h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.left p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #3e4ccb;
+}
+
+.divider {
+    width: 2px;
+    background-color: #ccc;
+}
+
+.right {
+    width: 45%;
+    text-align: center;
+    color: #3e4ccb;
+    font-size: 18px;
+}
+
+.item {
+    margin-bottom: 40px;
+}
+
+.item img {
+    width: 45px;
+    margin-bottom: 10px;
+}
+
+.item h3 {
+    font-size: 22px;
+    color: #000;
+    margin-bottom: 5px;
+}
