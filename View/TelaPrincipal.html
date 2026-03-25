@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Routine Hacker - Principal</title>
+    <link rel="stylesheet" href="TelaPrincipal.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="user-profile">
+        <div class="user-avatar">
+          <i class="fa-solid fa-user"></i>
+        </div>
+        <div class="user-info">
+          <span class="user-name">Yasmin Lima Eger</span>
+          <span class="user-email">yasmin@gmail.com</span>
+        </div>
+      </div>
+      <h1 class="main-logo-text">ROUTINE HACKER</h1>
+      <div class="menu-action-container">
+        <button class="menu-main-btn" onclick="toggleDropdown()">
+          <i class="fa-solid fa-ellipsis"></i>
+        </button>
+
+        <div class="dropdown-menu" id="myDropdown">
+          <a href="#" class="dropdown-item">
+            <i class="fa-solid fa-pencil"></i>
+            Editar Perfil
+            <i class="fa-solid fa-chevron-right arrow-right"></i>
+          </a>
+          <a href="#" class="dropdown-item active">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            Encontrar amigos
+            <i class="fa-solid fa-chevron-right arrow-right"></i>
+          </a>
+          <a href="#" class="dropdown-item">
+            <i class="fa-regular fa-clock"></i>
+            Ver histórico
+            <i class="fa-solid fa-chevron-right arrow-right"></i>
+          </a>
+          <a href="#" class="dropdown-item">
+            <i class="fa-regular fa-star"></i>
+            Ver recompensas
+            <i class="fa-solid fa-chevron-right arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <nav class="nav-bar">
+      <button class="activities-btn">
+        <i class="fa-regular fa-star"></i>
+        Atividades
+      </button>
+    </nav>
+
+    <main class="content-container">
+      <section class="routine-section">
+        <h2 class="section-title">Seus afazeres</h2>
+        <div class="task-list-container">
+          <div class="task-input-group">
+            <input type="text" placeholder="Adicione nova tarefa:" />
+          </div>
+          <ul class="task-list">
+            <li class="task-item">
+              <div class="item-id">A</div>
+              <span class="item-text">List item</span>
+              <input type="checkbox" class="item-checkbox" checked />
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="routine-section">
+        <h2 class="section-title">Seus compromissos</h2>
+        <div class="task-list-container">
+          <div class="task-input-group">
+            <input type="text" placeholder="Adicione novo compromisso:" />
+          </div>
+          <ul class="task-list">
+            <li class="task-item">
+              <div class="item-id">A</div>
+              <span class="item-text">List item</span>
+              <input type="checkbox" class="item-checkbox" checked />
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="routine-section">
+        <h2 class="section-title">
+          Suas a<span class="truncate-fix">ulas</span>
+        </h2>
+        <div class="task-list-container">
+          <div class="task-input-group">
+            <input type="text" placeholder="Adicione suas novas aulas:" />
+          </div>
+          <ul class="task-list">
+            <li class="task-item">
+              <div class="item-id">A</div>
+              <span class="item-text">List item</span>
+              <input type="checkbox" class="item-checkbox" checked />
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      function toggleDropdown() {
+        document.getElementById("myDropdown").classList.toggle("show");
+      }
+
+      // Fecha o dropdown se o usuário clicar fora dele
+      window.onclick = function (event) {
+        if (
+          !event.target.matches(".menu-main-btn") &&
+          !event.target.matches(".fa-ellipsis")
+        ) {
+          var dropdowns = document.getElementsByClassName("dropdown-menu");
+          for (var i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains("show")) {
+              openDropdown.classList.remove("show");
+            }
+          }
+        }
+      };
+    </script>
+  </body>
+</html>
