@@ -1,0 +1,144 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f2fcfd;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.header {
+    background-color: #82c8ff;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    color: #3f51b5;
+}
+
+.logo-icon { font-size: 40px; margin-right: 15px; }
+.logo-text { font-size: 32px; font-weight: bold; }
+
+.menu-btn {
+    background-color: rgba(0, 0, 0, 0.15);
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+.main-content {
+    flex: 1;
+    padding: 30px 40px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.back-link {
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.page-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 60px;
+}
+
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.search-box {
+    width: 100%;
+    max-width: 500px;
+    background-color: #f0ebf8; 
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.search-header {
+    background-color: #82c8ff;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.search-header i {
+    color: #333;
+    cursor: pointer;
+}
+
+.search-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #000;
+}
+
+.results-list {
+    list-style: none;
+}
+
+.result-item {
+    padding: 15px 50px; 
+    font-size: 16px;
+    color: #333;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.result-item:hover {
+    background-color: #e6def5;
+}
+
+.result-item:last-child {
+    border-bottom: none;
+}
+
+/* Notificação (Reutilizada da Tela 6) */
+.friend-notification {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    background-color: #82c8ff;
+    border-radius: 20px;
+    padding: 25px;
+    width: 300px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.notif-title { font-size: 20px; margin-bottom: 10px; color: #1a1a1a; }
+.notif-text { font-size: 13px; margin-bottom: 25px; color: #333; }
+.notif-actions { display: flex; justify-content: flex-end; gap: 15px; }
+.notif-link { color: white; font-size: 12px; cursor: pointer; font-weight: 500; }
+.notif-link:hover { text-decoration: underline; }

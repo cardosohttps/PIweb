@@ -1,0 +1,120 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f2fcfd;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.header {
+    background-color: #82c8ff;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    color: #3f51b5;
+}
+
+.logo-icon { font-size: 40px; margin-right: 15px; }
+.logo-text { font-size: 32px; font-weight: bold; }
+
+.menu-btn {
+    background-color: rgba(0, 0, 0, 0.15);
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+.main-content {
+    flex: 1;
+    padding: 30px 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.back-link {
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.page-title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 500;
+    color: #000;
+    margin: 40px 0 60px;
+}
+
+
+.rewards-container {
+    max-width: 650px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+
+.reward-card {
+    display: flex;
+    align-items: center;
+    padding: 15px 35px;
+    border-radius: 18px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    position: relative;
+    transition: transform 0.2s;
+    cursor: default;
+}
+
+.reward-card:hover {
+    transform: scale(1.02);
+}
+
+.reward-date {
+    font-size: 32px;
+    font-weight: 500;
+    margin-right: 40px;
+    min-width: 80px;
+}
+
+.reward-name {
+    font-size: 32px;
+    font-weight: 500;
+    flex: 1;
+    text-align: center;
+}
+
+.medal-icon {
+    font-size: 40px;
+    color: #ffd700; 
+    filter: drop-shadow(0 2px 2px rgba(0,0,0,0.2));
+}
+
+
+.level-1 { background-color: #3f83f1; color: #000; }
+.level-2 { background-color: #82b1ff; color: #000; }
+.level-3 { background-color: #c0d8ff; color: #000; }
+.level-4 { background-color: #e0ecff; color: #000; }

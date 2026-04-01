@@ -1,0 +1,112 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #2e3192; 
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.recompensa-container {
+    max-width: 500px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+
+.achievement-icon-wrapper {
+    background-color: #ffd700;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    margin-bottom: 30px;
+}
+
+.achievement-emoji {
+    font-size: 80px;
+    line-height: 1;
+}
+
+
+.texts-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+.subtitle {
+    font-size: 18px;
+    color: #ffd700; 
+    font-weight: 500;
+}
+
+.main-title {
+    font-size: 32px;
+    color: #ffffff; 
+    font-weight: bold;
+}
+
+.motivation-text {
+    font-size: 16px;
+    color: #ffffff; 
+    line-height: 1.5;
+}
+
+
+.buttons-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; 
+}
+
+.btn {
+    width: 100%;
+    padding: 15px;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    outline: none;
+}
+
+.btn-use-now {
+    background-color: #3fa9f5; 
+    color: #ffffff;
+    border: none;
+}
+
+.btn-use-now:hover {
+    background-color: #3287c1;
+}
+
+.btn-back {
+    background-color: transparent; 
+    color: #ffffff;
+    border: 2px solid #ffffff; 
+}
+
+.btn-back:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
