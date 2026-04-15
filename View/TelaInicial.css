@@ -5,7 +5,7 @@ body {
     color: #222;
 }
 
-/* Topo */
+
 header {
     background-color: #74b6ff;
     padding: 20px;
@@ -41,7 +41,7 @@ header {
     font-size: 14px;
 }
 
-/* Conteúdo principal */
+
 .container {
     display: flex;
     padding: 50px;
