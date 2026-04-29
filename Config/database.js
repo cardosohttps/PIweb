@@ -3,7 +3,7 @@ const mysql = require('mysql2/promise');
 
 const pool = mysql.createPool({
     host: 'localhost',      
-    password: '',           //senha do MySQL (XAMPP vazio)
+    password: '',           //Yasmin (deixarvazio)
     database: 'routine_hacker',
     waitForConnections: true,
     connectionLimit: 10,    
