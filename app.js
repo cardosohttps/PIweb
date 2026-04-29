@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const db = require('./config/database'); 
+const db = require('./Config/database'); 
 
 
 const UsuarioController = require('./controllers/UsuarioController');
@@ -22,5 +22,5 @@ app.get('/atividades/:id_usuario/:data', AtividadeController.listarDoDia);
 
 const PORT = 3000;
 app.listen(PORT, () => {
-    console.log(`🚀 Servidor rodando em http://localhost:${PORT}`);
+    console.log(` Servidor rodando em http://localhost:${PORT}`);
 });
