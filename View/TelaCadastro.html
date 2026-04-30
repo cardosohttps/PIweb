@@ -20,7 +20,9 @@
     </header>
 
     <main class="main-content">
-      <div class="back-link"><i class="fa-solid fa-arrow-left"></i> Voltar</div>
+      <div class="back-link" onclick="history.back()">
+    <i class="fa-solid fa-arrow-left"></i> Voltar
+</div>
 
       <div class="register-container">
         <div class="avatar">
@@ -48,8 +50,11 @@
               required
             />
           </div>
-          <button type="submit" class="register-btn">
-            <i class="fa-solid fa-star"></i> Cadastrar
+          
+          <a href="TelaLogin.html" style="text-decoration: none;"> 
+          <button type="button" class="register-btn">
+          <i class="fa-solid fa-star"></i> Cadastrar</button></a>
+    
           </button>
         </form>
       </div>
