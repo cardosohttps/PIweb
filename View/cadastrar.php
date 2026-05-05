@@ -8,12 +8,12 @@ if (file_exists('conexao.php')) {
     require_once('conexao.php');
     echo "";
 } else {
-    die("ERRO FATAL: O arquivo conexao.php não foi encontrado na pasta View. Caminho atual: " . __DIR__);
+    die("O arquivo conexao.php deu erro Caminho atual: " . __DIR__);
 }
 
 
 if (!isset($conn)) {
-    die("ERRO: A conexão foi incluída, mas a variável \$conn está vazia ou não existe.");
+    die("conexão incluída mas a variável \$conn está vazia ou não existe");
 }
 
 

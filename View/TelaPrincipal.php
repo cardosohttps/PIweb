@@ -11,43 +11,10 @@
     />
   </head>
   <body>
-    <header class="header">
-      <div class="user-profile">
-        <div class="user-avatar">
-          <i class="fa-solid fa-user"></i>
-        </div>
-        <div class="user-info">
-          <span class="user-name">Fulano</span>
-          <span class="user-email">fulano@gmail.com</span>
-        </div>
-      </div>
-      <h1 class="main-logo-text">ROUTINE HACKER</h1>
-      <div class="menu-action-container">
-        <button class="menu-main-btn" onclick="toggleDropdown()">
-          <i class="fa-solid fa-ellipsis"></i>
-        </button>
-
-        <div class="dropdown-menu" id="myDropdown">
-          <a href="TelaPerfil.html" class="dropdown-item"> <i class="fa-solid fa-pencil"></i>
-          Editar Perfil
-          <i class="fa-solid fa-chevron-right arrow-right"></i>
-          </a>
-          <a href="TelaAmigos.html" class="dropdown-item"> <i class="fa-solid fa-magnifying-glass"></i>
-          Encontrar Amigos
-          <i class="fa-solid fa-chevron-right arrow-right"></i>
-          </a>
-          <a href="TelaHistorico.html" class="dropdown-item"> <i class="fa-regular fa-clock"></i>
-          Ver histórico
-          <i class="fa-solid fa-chevron-right arrow-right"></i>
-          </a>
-          <a href="TelaRecompensas.html" class="dropdown-item"> <i class="fa-regular fa-star"></i>
-          Ver recompensas
-          <i class="fa-solid fa-chevron-right arrow-right"></i>
-          </a>       
-        </div>
-      </div>
-    </header>
-
+  
+<?php
+require_once("header.php");
+?>
     <nav class="nav-bar">
       <button class="activities-btn">
         

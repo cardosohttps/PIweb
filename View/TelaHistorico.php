@@ -8,14 +8,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <header class="header">
-        <div class="logo-container">
-            <i class="fa-solid fa-clock logo-icon"></i>
-            <h1 class="logo-text">ROUTINE HACKER</h1>
-        </div>
-        <button class="menu-btn"><i class="fa-solid fa-ellipsis"></i></button>
-    </header>
-
+    <?php
+require_once("header.php");
+?>
     <main class="main-content">
         <div class="back-link" onclick="history.back()">
     <i class="fa-solid fa-arrow-left"></i> Voltar

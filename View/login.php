@@ -7,11 +7,11 @@ error_reporting(E_ALL);
 if (file_exists('conexao.php')) {
     require_once('conexao.php');
 } else {
-    die("ERRO FATAL: O arquivo conexao.php não foi encontrado na pasta View. Caminho atual: " . __DIR__);
+    die("O arquivo conexao.php deu erro Caminho atual: " . __DIR__);
 }
 
 if (!isset($conn)) {
-    die("ERRO: A conexão foi incluída, mas a variável \$conn está vazia ou não existe.");
+    die("conexão incluída mas a variável \$conn está vazia ou não existe");
 }
 
 $matricula = $_POST['matricula'];
@@ -31,19 +31,19 @@ if ($resultado) {
         $_SESSION['id_usuario'] = $usuario['id'];
         $_SESSION['nome_usuario'] = $usuario['nome'];
 
-        header("Location: TelaPrincipal.html");
+        header("Location: TelaPrincipal.php");
         exit();
         
     } else {
 
         echo "<script>
-                alert('Matrícula ou senha incorretos!'); 
+                alert('matrícula ou senha incorretos'); 
                 window.location.href='TelaLogin.html';
               </script>";
     }
 } else {
 
-    echo "Erro ao consultar o banco: " . mysqli_error($conn);
+    echo "erro ao consultar o banco: " . mysqli_error($conn);
 }
 
 mysqli_close($conn);
