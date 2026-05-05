@@ -30,30 +30,27 @@
         </div>
         <h2 class="register-title">Faça seu cadastro</h2>
 
-        <form class="register-form" action="#" method="POST">
+        <form class="register-form" action="cadastrar.php" method="POST">
           <div class="input-group">
-            <input type="text" id="nome" placeholder="Nome:" required />
+            <input type="text" id="nome" name="nome" placeholder="Nome:" required />
           </div>
           <div class="input-group">
-            <input
-              type="text"
-              id="matricula"
-              placeholder="Matrícula:"
-              required
-            />
+            <input type="text"  id="matricula" name="matricula" placeholder="Matrícula:" required/>
           </div>
           <div class="input-group">
             <input
               type="password"
               id="senha"
+              name="senha"
               placeholder="Crie uma senha:"
               required
             />
           </div>
           
-          <a href="TelaLogin.html" style="text-decoration: none;"> 
-          <button type="button" class="register-btn">
-          <i class="fa-solid fa-star"></i> Cadastrar</button></a>
+          <button type="submit" class="register-btn">
+            <i class="fa-solid fa-star"></i> Cadastrar
+          </button>
+          
     
           </button>
         </form>

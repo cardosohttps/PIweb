@@ -46,7 +46,7 @@ body {
     color: white;
     padding: 8px 12px;
     border-radius: 4px;
-    cursor: pointer;
+    cursor: default;
     font-size: 18px;
     transition: background-color 0.2s;
 }

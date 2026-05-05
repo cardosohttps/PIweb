@@ -20,7 +20,9 @@
     </header>
 
     <main class="main-content">
-      <div class="back-link"><i class="fa-solid fa-arrow-left"></i> Voltar</div>
+      <div class="back-link" onclick="history.back()">
+    <i class="fa-solid fa-arrow-left"></i> Voltar
+</div>
 
       <div class="login-container">
         <div class="avatar">
@@ -28,27 +30,29 @@
         </div>
         <h2 class="login-title">Login</h2>
 
-        <form class="login-form" action="#" method="POST">
-          <div class="input-group">
-            <input
-              type="text"
-              id="matricula"
-              placeholder="Matrícula:"
-              required
-            />
-          </div>
-          <div class="input-group">
-            <input
-              type="password"
-              id="senha"
-              placeholder="Digite sua senha:"
-              required
-            />
-          </div>
-          <button type="submit" class="login-btn">
-            <i class="fa-solid fa-circle-play"></i> Logar
-          </button>
-        </form>
+        <form class="login-form" action="login.php" method="POST">
+  <div class="input-group">
+    <input
+      type="text"
+      id="matricula"
+      name="matricula" 
+      placeholder="Matrícula:"
+      required
+    />
+  </div>
+  <div class="input-group">
+    <input
+      type="password"
+      id="senha"
+      name="senha"
+      placeholder="Digite sua senha:"
+      required
+    />
+  </div>
+  <button type="submit" class="login-btn">
+    <i class="fa-solid fa-circle-play"></i> Logar
+  </button>
+</form>
       </div>
     </main>
   </body>
