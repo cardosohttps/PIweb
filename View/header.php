@@ -10,7 +10,16 @@ if(isset($_SESSION['id_usuario'])  &&  (isset($_SESSION['nome_usuario']))){
         
 }
 ?>
-
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="header.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+</head>
+<body>
 <header class="header">
       <div class="user-profile">
         <div class="user-avatar">
