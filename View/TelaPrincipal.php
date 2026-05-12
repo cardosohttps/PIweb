@@ -15,6 +15,9 @@
 <?php
 require_once("header.php");
 ?>
+ <div class="back-link" onclick="history.back()">
+    <i class="fa-solid fa-arrow-left"></i> Voltar
+</div>
     <nav class="nav-bar">
       <button class="activities-btn">
         
