@@ -52,6 +52,10 @@ if(isset($_SESSION['id_usuario'])  &&  (isset($_SESSION['nome_usuario']))){
           <a href="TelaRecompensas.php" class="dropdown-item"> <i class="fa-regular fa-star"></i>
           Ver recompensas
           <i class="fa-solid fa-chevron-right arrow-right"></i>
+          </a>
+          <a href="logout.php" class="dropdown-item" style=> 
+          <i class="fa-solid fa-right-from-bracket"></i> Sair
+          <i class="fa-solid fa-chevron-right arrow-right"></i>
           </a>     
         </div>
       </div>
