@@ -51,6 +51,7 @@ require_once("header.php");
             </div>
 
             <div class="right-column">
+
                 <form class="profile-form" action="#" method="POST">
                     <div class="input-group">
                         <input type="text" id="telefone" placeholder="Telefone:">
@@ -67,7 +68,25 @@ require_once("header.php");
                     <div class="input-group">
                         <input type="text" id="curso" placeholder="Curso:">
                     </div>
-                </form>
+                    <div class="avatar-container">
+                      <h3>Escolha seu Avatar:</h3>
+                     <div class="avatar-options">
+            
+                   <label class="avatar-label">
+                   <input type="radio" name="avatar" value="avatar_homem.png" checked>
+                   <img src="imagens/avatar_homem.png" alt="Avatar Homem"> </label>
+
+                 <label class="avatar-label">
+                <input type="radio" name="avatar" value="avatar_mulher.png">
+                <img src="imagens/avatar_mulher.png" alt="Avatar Mulher"></label>
+
+                <label class="avatar-label">
+                <input type="radio" name="avatar" value="avatar_skatista.png">
+                <img src="imagens/avatar_skatista.png" alt="Avatar Skatista"></label></div>
+            </div>
+           <button type="submit">Salvar Perfil</button>
+                
+        </form>
             </div>
         </div>
 

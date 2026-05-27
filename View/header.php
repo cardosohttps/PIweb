@@ -33,7 +33,7 @@ if(isset($_SESSION['matricula'])){
         </div>
         <div class="user-info">
           <span class="user-name"><?php echo $nome; ?></span>
-          <span class="user-matricula"><div>Matrícula:</div><?php echo $matricula; ?></span>
+          <span class="user-matricula"><div>Matrícula: <?php echo $matricula; ?></div></span>
         </div>
       </div>
       <h1 class="main-logo-text">ROUTINE HACKER</h1>
