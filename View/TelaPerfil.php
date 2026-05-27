@@ -31,8 +31,8 @@ require_once("header.php");
                         </div>
                     </div>
                     <div class="user-details">
-                        <span class="user-name">Yasmin Lima Eger</span>
-                        <span class="user-email">yasmin@gmail.com</span>
+                        <span class="user-name"><?php echo $nome;?></span>
+                        <span class="user-matricula"><?php echo $matricula;?></span>
                     </div>
                 </div>
 

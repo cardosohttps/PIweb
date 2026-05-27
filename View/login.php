@@ -30,6 +30,7 @@ if ($resultado) {
 
         $_SESSION['id_usuario'] = $usuario['id'];
         $_SESSION['nome_usuario'] = $usuario['nome'];
+        $_SESSION['matricula'] = $usuario['matricula'];
 
         header("Location: TelaPrincipal.php");
         exit();
