@@ -11,6 +11,12 @@
     <?php
 require_once("header.php");
 ?>
+<?php 
+
+    $nome = $_SESSION['nome_usuario'];
+    $matricula = $_SESSION['matricula'];
+
+?>
 
     <main class="main-content">
         <div class="back-link" onclick="history.back()">
@@ -52,7 +58,7 @@ require_once("header.php");
 
             <div class="right-column">
 
-                <form class="profile-form" action="#" method="POST">
+                <form class="profile-form" action="salvar_perfil.php" method="POST">
                     <div class="input-group">
                         <input type="text" id="telefone" placeholder="Telefone:">
                     </div>
@@ -69,30 +75,9 @@ require_once("header.php");
                         <input type="text" id="curso" placeholder="Curso:">
                     </div>
                     <div class="avatar-container">
-                      <h3>Escolha seu Avatar:</h3>
-                     <div class="avatar-options">
-            
-                   <label class="avatar-label">
-                   <input type="radio" name="avatar" value="avatar_homem.png" checked>
-                   <img src="imagens/avatar_homem.png" alt="Avatar Homem"> </label>
-
-                 <label class="avatar-label">
-                <input type="radio" name="avatar" value="avatar_mulher.png">
-                <img src="imagens/avatar_mulher.png" alt="Avatar Mulher"></label>
-
-                <label class="avatar-label">
-                <input type="radio" name="avatar" value="avatar_skatista.png">
-                <img src="imagens/avatar_skatista.png" alt="Avatar Skatista"></label></div>
-            </div>
-           <button type="submit">Salvar Perfil</button>
-                
-        </form>
-            </div>
-        </div>
 
         <div class="action-container">
-            <button type="button" class="action-btn">
-                <i class="fa-solid fa-star"></i> Alterar
+            <button type="button" class="action-btn"> Salvar
             </button>
         </div>
     </main>
