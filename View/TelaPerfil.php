@@ -60,10 +60,10 @@ require_once("header.php");
 
                 <form class="profile-form" action="salvar_perfil.php" method="POST">
                     <div class="input-group">
-                        <input type="text" id="telefone" placeholder="Telefone:">
+                        <input type="text" id="telefone" placeholder="Username:">
                     </div>
                     <div class="input-group">
-                        <input type="text" id="username" placeholder="Username:">
+                        <input type="text" id="username" placeholder="Telefone:">
                     </div>
                     <div class="input-group">
                         <input type="text" id="compromissos" placeholder="Compromissos:">

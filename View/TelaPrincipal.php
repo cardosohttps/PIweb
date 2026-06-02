@@ -13,90 +13,54 @@
   <body>
   
 <?php
+
 require_once("header.php");
+require_once("conexao.php"); 
 ?>
- <div class="back-link" onclick="history.back()">
-    <i class="fa-solid fa-arrow-left"></i> Voltar
-</div>
+
+    <div class="back-link" onclick="history.back()">
+        Voltar
+    </div>
+
     <nav class="nav-bar">
-      <button class="activities-btn">
-        
-        Atividades
+      <button class="activities-btn" onclick="window.location.reload();">
+        Atualizar
       </button>
     </nav>
 
     <main class="content-container">
-      <section class="routine-section">
-        <h2 class="section-title">Seus afazeres</h2>
-        <div class="task-list-container">
-          <div class="task-input-group">
-            <input type="text" placeholder="Adicione nova tarefa:" />
-          </div>
-          <ul class="task-list">
-            <li class="task-item">
-              <div class="item-id">A</div>
-              <span class="item-text">List item</span>
-              <input type="checkbox" class="item-checkbox" checked />
-            </li>
-          </ul>
-        </div>
-      </section>
 
       <section class="routine-section">
         <h2 class="section-title">Seus compromissos</h2>
         <div class="task-list-container">
-          <div class="task-input-group">
-            <input type="text" placeholder="Adicione novo compromisso:" />
-          </div>
+          
+          <form action="adicionar_compromisso.php" method="POST" class="task-input-group">
+            <input type="text" name="descricao" placeholder="Adicione novo compromisso:" required />
+            <input type="datetime-local" name="data_hora" required />
+            <button type="submit">Salvar</button>
+          </form>
+
           <ul class="task-list">
-            <li class="task-item">
-              <div class="item-id">A</div>
-              <span class="item-text">List item</span>
-              <input type="checkbox" class="item-checkbox" checked />
-            </li>
-          </ul>
-        </div>
-      </section>
+            <?php
+            if (isset($_SESSION['id_usuario'])) {
+                $id_usuario = $_SESSION['id_usuario'];
+                
+                $query = "SELECT * FROM compromissos WHERE id_usuario = '$id_usuario' ORDER BY data_hora ASC";
+                $resultado = mysqli_query($conn, $query);
 
-      <section class="routine-section">
-        <h2 class="section-title">
-          Suas a<span class="truncate-fix">ulas</span>
-        </h2>
-        <div class="task-list-container">
-          <div class="task-input-group">
-            <input type="text" placeholder="Adicione suas novas aulas:" />
-          </div>
-          <ul class="task-list">
-            <li class="task-item">
-              <div class="item-id">A</div>
-              <span class="item-text">List item</span>
-              <input type="checkbox" class="item-checkbox" checked />
-            </li>
-          </ul>
-        </div>
-      </section>
-    </main>
-
-    <script>
-      function toggleDropdown() {
-        document.getElementById("myDropdown").classList.toggle("show");
-      }
-
-      
-      window.onclick = function (event) {
-        if (
-          !event.target.matches(".menu-main-btn") &&
-          !event.target.matches(".fa-ellipsis")
-        ) {
-          var dropdowns = document.getElementsByClassName("dropdown-menu");
-          for (var i = 0; i < dropdowns.length; i++) {
-            var openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains("show")) {
-              openDropdown.classList.remove("show");
+                while ($compromisso = mysqli_fetch_assoc($resultado)) {
+                    echo '<li class="task-item">';
+                    echo '  <span class="item-text">' . htmlspecialchars($compromisso['descricao']) . ' (' . $compromisso['data_hora'] . ')</span>';
+                    echo '  <input type="checkbox" class="item-checkbox" />';
+                    echo '</li>';
+                }
             }
-          }
-        }
-      };
-    </script>
+            ?>
+          </ul>
+
+        </div>
+      </section>
+
+    </main>
   </body>
 </html>

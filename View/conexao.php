@@ -1,12 +1,13 @@
 <?php
 $host = "localhost";
 $usuario = "root";
-$senha = ""; 
-$banco = "routine"; 
+$senha = "";
+$banco = "routine";
+$porta = 3307; // porta do MySQL
 
-$conn = mysqli_connect($host, $usuario, $senha, $banco);
+$conn = mysqli_connect($host, $usuario, $senha, $banco, $porta);
 
 if (!$conn) {
-    die("erro de conexao: " . mysqli_connect_error());
+    die("Erro de conexão: " . mysqli_connect_error());
 }
 ?>

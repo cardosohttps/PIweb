@@ -29,13 +29,10 @@ if(isset($_SESSION['matricula'])){
 <header class="header">
       <div class="user-profile">
         <div class="user-avatar">
-        <?php    
-        $foto_exibicao = isset($_SESSION['foto_perfil']) ?>
-          <img src="<?php echo $foto_exibicao; ?>" alt="Foto de Perfil" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;"/>
           <i class="fa-solid fa-user"></i>
         </div>
         <div class="user-info">
-          <span class="user-name"><?php echo $nome; ?></span>
+          <span class="user-name"><div>Nome: <?php echo $nome; ?></div></span>
           <span class="user-matricula"><div>Matrícula: <?php echo $matricula; ?></div></span>
         </div>
       </div>
