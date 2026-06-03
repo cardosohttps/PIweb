@@ -29,7 +29,9 @@ $matricula = $_SESSION['matricula'];
                         <div class="main-avatar">
                             <i class="fa-solid fa-user"></i>
                         </div>
-                        <div class="user-details">
+                        
+                    </div>
+                    <div class="user-details">
                         <span class="user-name"><?php echo $nome;?></span>
                         <span class="user-matricula"><?php echo $matricula;?></span>
                     </div>

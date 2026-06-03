@@ -28,16 +28,15 @@ body {
 }
 
 .user-avatar {
-  background-color: #f0f0f0;
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #a0a0a0;
-  font-size: 35px;
-  margin-right: 15px;
+  width: 70px;             /* Tamanho do círculo (pode aumentar ou diminuir aqui) */
+    height: 70px;            /* Obrigatoriamente igual à largura para não virar uma elipse */
+    border-radius: 50%;      /* Recorta o container em formato de círculo perfeito */
+    overflow: hidden;        /* Garante que nenhuma ponta da imagem morda para fora do círculo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #fff;  /* Uma bordinha branca opcional para dar um destaque extra */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .user-info {
