@@ -1,22 +1,26 @@
 <?php
 session_start();
-require_once('conexao.php'); 
+require_once("conexao.php"); 
 
-
-if (isset($_SESSION['id_usuario']) && isset($_POST['avatar'])) {
-    
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $id_usuario = $_SESSION['id_usuario'];
-    $avatar_escolhido = $_POST['avatar']; /
-
+    $avatar = !empty($_POST['avatar_escolhido']) ? $_POST['avatar_escolhido'] : $_SESSION['foto_perfil'];
+    $username = !empty($_POST['username']) ? $_POST['username'] : $_SESSION['nome_usuario'];
+    $telefone = $_POST['telefone'];
+    $biografia = $_POST['biografia'];
+    $curso = $_POST['curso'];
+    $sql = "UPDATE usuarios SET foto_perfil = ?, nome = ? WHERE id = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("ssi", $avatar, $username, $id_usuario);
     
-    $sql = "UPDATE usuarios SET foto_perfil = '$avatar_escolhido' WHERE id = '$id_usuario'";
-    mysqli_query($conn, $sql);
-
-    
-    $_SESSION['foto_perfil'] = $avatar_escolhido;
+    if ($stmt->execute()) {
+        $_SESSION['foto_perfil'] = $avatar;
+        $_SESSION['nome_usuario'] = $username;
+        
+        echo "<script>alert('Perfil atualizado com sucesso!'); window.location.href='TelaPerfil.php';</script>";
+    } else {
+        echo "Erro ao atualizar: " . $conn->error;
+    }
+    $stmt->close();
 }
-
-
-header("Location: TelaPrincipal.php");
-exit();
 ?>

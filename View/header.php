@@ -3,9 +3,8 @@ session_start();
 
 $nome="";
 $matricula="";
-if(isset($_SESSION['id_usuario'])  &&  (isset($_SESSION['nome_usuario']))){
-    $nome = $_SESSION['nome_usuario'];
-
+if(isset($_SESSION['id_usuario'])){ 
+    $nome = $_SESSION['nome_usuario'] ?? 'Usuário';
 if(isset($_SESSION['matricula'])){
         $matricula = $_SESSION['matricula'];
     } else {
@@ -29,7 +28,11 @@ if(isset($_SESSION['matricula'])){
 <header class="header">
       <div class="user-profile">
         <div class="user-avatar">
-          <i class="fa-solid fa-user"></i>
+          <?php if(isset($_SESSION['foto_perfil']) && !empty($_SESSION['foto_perfil'])): ?>
+              <img src="<?php echo $_SESSION['foto_perfil']; ?>" alt="Avatar" class="avatar-img-header">
+          <?php else: ?>
+              <i class="fa-solid fa-user"></i>
+          <?php endif; ?>
         </div>
         <div class="user-info">
           <span class="user-name"><div>Nome: <?php echo $nome; ?></div></span>
