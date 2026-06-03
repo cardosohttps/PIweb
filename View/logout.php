@@ -2,6 +2,6 @@
 session_start();
 session_unset();
 session_destroy();
-header("Location: TelaLogin.html");
+header("Location: TelaCadastro.html");
 exit();
 ?>
