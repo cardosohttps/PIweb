@@ -28,10 +28,11 @@ if(isset($_SESSION['matricula'])){
 <header class="header">
       <div class="user-profile">
         <div class="user-avatar">
-          <?php if(isset($_SESSION['foto_perfil']) && !empty($_SESSION['foto_perfil'])): ?>
-              <img src="<?php echo $_SESSION['foto_perfil']; ?>" alt="Avatar" class="avatar-img-header">
+          <?php 
+          if(isset($_SESSION['foto_perfil']) && !empty($_SESSION['foto_perfil']) && $_SESSION['foto_perfil'] !== 'default.png'): ?>
+          <img src="<?php echo $_SESSION['foto_perfil']; ?>" alt="Avatar" class="avatar-img-header">
           <?php else: ?>
-              <i class="fa-solid fa-user"></i>
+          <i class="fa-solid fa-user"></i>
           <?php endif; ?>
         </div>
         <div class="user-info">

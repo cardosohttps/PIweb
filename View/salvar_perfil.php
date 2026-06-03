@@ -4,7 +4,11 @@ require_once("conexao.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $id_usuario = $_SESSION['id_usuario'];
-    $avatar = !empty($_POST['avatar_escolhido']) ? $_POST['avatar_escolhido'] : $_SESSION['foto_perfil'];
+    if (!empty($_POST['avatar_escolhido'])) {
+        $avatar = $_POST['avatar_escolhido']; 
+    } else {
+        $avatar = $_SESSION['foto_perfil'] ?? 'default.png'; 
+    }
     $username = !empty($_POST['username']) ? $_POST['username'] : $_SESSION['nome_usuario'];
     $telefone = $_POST['telefone'];
     $biografia = $_POST['biografia'];
