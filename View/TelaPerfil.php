@@ -27,7 +27,10 @@ $matricula = $_SESSION['matricula'];
                 <div class="current-user-info">
                     <div class="avatar-wrapper">
                         <div class="main-avatar">
-                            <i class="fa-solid fa-user"></i>
+                        <img id="foto-preview-grande" 
+                        src="<?php echo (isset($_SESSION['foto_perfil']) && $_SESSION['foto_perfil'] !== 'default.png') ? $_SESSION['foto_perfil'] : '1.png'; ?>" 
+                        alt="Preview do Avatar" 
+                        style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 2px solid #fff;">
                         </div>
                         
                     </div>
@@ -84,6 +87,7 @@ $matricula = $_SESSION['matricula'];
         elementoImg.style.border = "3px solid #3f51b5";
         elementoImg.style.borderRadius = "50%";
         document.getElementById('input_avatar').value = nomeArquivo;
+        document.getElementById('foto-preview-grande').src = nomeArquivo;
     }
     </script>
 </body>

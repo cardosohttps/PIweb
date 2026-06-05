@@ -9,64 +9,65 @@
 </head>
 <body>
     <?php
-require_once("header.php");
-?>
+    require_once("header.php");
+    require_once("conexao.php"); 
+    ?>
+    
     <main class="main-content">
         <div class="back-link" onclick="history.back()">
-    <i class="fa-solid fa-arrow-left"></i> Voltar
-</div>
+            <i class="fa-solid fa-arrow-left"></i> Voltar
+        </div>
 
         <h2 class="page-title">Histórico de afazeres</h2>
 
         <div class="history-grid">
-            
-            <div class="history-card">
-                <div class="card-header">
-                    <span class="date">13/11/2025</span>
-                    <i class="fa-solid fa-square-check check-icon"></i>
-                </div>
-                <ul class="task-list">
-                    <li>Fazer exercícios</li>
-                    <li>Fazer PI</li>
-                    <li>Estudar</li>
-                    <li>Tomar água</li>
-                    <li>Trabalho de Física</li>
-                    <li>Telas PDS</li>
-                </ul>
-            </div>
+            <?php
+            $id_usuario = $_SESSION['id_usuario'] ?? 0; 
 
-            <div class="history-card">
-                <div class="card-header">
-                    <span class="date">14/11/2025</span>
-                    <i class="fa-solid fa-square-check check-icon"></i>
-                </div>
-                <ul class="task-list">
-                    <li>Trabalho de Química</li>
-                    <li>Tomar água</li>
-                    <li>Fazer exercícios</li>
-                    <li>Estudar</li>
-                    <li>Telas PDS</li>
-                    <li>Trabalho Sistemas Operacionais</li>
-                    <li>Fazer Redação</li>
-                    <li>Fazer Diagrama</li>
-                </ul>
-            </div>
+            if ($id_usuario > 0) {
+                $sql = "SELECT data_hora, descricao 
+                        FROM compromissos 
+                        WHERE id_usuario = ? AND status = 1 
+                        ORDER BY data_hora DESC";
+                $stmt = $conn->prepare($sql); 
+                $stmt->bind_param("i", $id_usuario);
+                $stmt->execute();
+                $resultado = $stmt->get_result();
 
-            <div class="history-card">
-                <div class="card-header">
-                    <span class="date">15/11/2025</span>
-                    <i class="fa-solid fa-square-check check-icon"></i>
-                </div>
-                <ul class="task-list">
-                    <li>Tomar água</li>
-                    <li>Fazer exercícios</li>
-                    <li>Fazer PI</li>
-                    <li>Telas PDS</li>
-                    <li>Estudar</li>
-                    <li>Trabalho de jogos</li>
-                </ul>
-            </div>
-
+                $historico = [];
+                while ($linha = $resultado->fetch_assoc()) {
+                    $data_formatada = date('d/m/Y', strtotime($linha['data_hora']));
+                    $historico[$data_formatada][] = $linha['descricao'];
+                }
+                
+                $stmt->close();
+                if (empty($historico)) {
+                    echo "<p style='text-align: center; width: 100%; color: #666; margin-top: 20px;'>
+                            Nenhum histórico encontrado. Você ainda não concluiu nenhum compromisso.
+                          </p>";
+                } else {
+                    foreach ($historico as $data => $tarefas) {
+                        ?>
+                        <div class="history-card">
+                            <div class="card-header">
+                                <span class="date"><?php echo htmlspecialchars($data); ?></span>
+                                <i class="fa-solid fa-square-check check-icon"></i>
+                            </div>
+                            <ul class="task-list">
+                                <?php 
+                                foreach ($tarefas as $tarefa_descricao) { 
+                                    echo "<li>" . htmlspecialchars($tarefa_descricao) . "</li>";
+                                } 
+                                ?>
+                            </ul>
+                        </div>
+                        <?php
+                    }
+                }
+            } else {
+                echo "<p style='text-align: center; width: 100%; color: red;'>Erro: Usuário não identificado. Faça login novamente.</p>";
+            }
+            ?>
         </div>
     </main>
 </body>
