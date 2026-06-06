@@ -13,9 +13,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $telefone = $_POST['telefone'];
     $biografia = $_POST['biografia'];
     $curso = $_POST['curso'];
-    $sql = "UPDATE usuarios SET foto_perfil = ?, nome = ? WHERE id = ?";
+    $sql = "UPDATE usuarios SET foto_perfil = ?, nome = ?, telefone = ?, biografia = ?, curso = ? WHERE id = ?";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ssi", $avatar, $username, $id_usuario);
+    $stmt->bind_param("sssssi", $avatar, $username, $telefone, $biografia, $curso, $id_usuario);
     
     if ($stmt->execute()) {
         $_SESSION['foto_perfil'] = $avatar;

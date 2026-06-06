@@ -30,7 +30,9 @@ if(isset($_SESSION['matricula'])){
         <div class="user-avatar">
           <?php 
           if(isset($_SESSION['foto_perfil']) && !empty($_SESSION['foto_perfil']) && $_SESSION['foto_perfil'] !== 'default.png'): ?>
-          <img src="<?php echo $_SESSION['foto_perfil']; ?>" alt="Avatar" class="avatar-img-header">
+          <a href="TelaBio.php" style="display: contents;">
+          <img src="<?php echo $_SESSION['foto_perfil']; ?>" alt="Foto de Perfil" class="avatar-img-header">
+          </a>
           <?php else: ?>
           <i class="fa-solid fa-user"></i>
           <?php endif; ?>

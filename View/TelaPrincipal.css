@@ -161,17 +161,6 @@ body {
 }
 
 
-
-.content-container {
-  flex: 1;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 10px;
-  padding: 0 40px 40px;
-  max-width: 1000px;
-  margin: 0 auto;
-  width: 100%;
-}
 .back-link {
     font-size: 20px;
     font-weight: bold;
@@ -309,4 +298,55 @@ body {
   height: 16px;
   cursor: default;
 }
+.layout-principal {
+  display: flex;
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 40px;
+  gap: 50px; 
+  width: 100%;
+}
 
+.coluna-esquerda {
+  flex: 1; 
+  display: flex;
+  flex-direction: column;
+  gap: 25px; 
+}
+
+.coluna-direita {
+  flex: 2.2; 
+  display: flex;
+  flex-direction: column;
+}
+
+/* =========================================
+   ESTILO DOS BOTÕES LATERAIS (Blocos)
+   ========================================= */
+.bloco-menu {
+  background-color: #fff;
+  border: 1px solid #3fa9f5; 
+  border-radius: 10px;
+  padding: 30px 20px;
+  text-align: center;
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: transform 0.2s, background-color 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px; 
+}
+
+.bloco-menu:hover {
+  transform: translateY(-5px); 
+  background-color: #e6f5ff; 
+}
+
+.bloco-menu i {
+  font-size: 35px;
+  color: #3f51b5; 
+}

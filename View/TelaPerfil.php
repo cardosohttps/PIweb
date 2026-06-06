@@ -65,9 +65,6 @@ $matricula = $_SESSION['matricula'];
             <input type="text" id="telefone" name="telefone" placeholder="Telefone:">
         </div>
         <div class="input-group">
-            <input type="text" id="compromissos" name="compromissos" placeholder="Compromissos:">
-        </div>
-        <div class="input-group">
             <input type="text" id="biografia" name="biografia" placeholder="Biografia:">
         </div>
         <div class="input-group">
