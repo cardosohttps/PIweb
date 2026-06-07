@@ -81,13 +81,13 @@ if (isset($_GET['limpar_concluidos']) && isset($_SESSION['id_usuario'])) {
                   while ($compromisso = mysqli_fetch_assoc($resultado)) {
                     $id_tarefa = $compromisso['id'];
                     $marcado = ($compromisso['status'] == 1) ? 'checked' : '';
-
+                    $estilo_texto = ($compromisso['status'] == 1) ? 'text-decoration: line-through; color: #aaa;' : '';
                     echo '<li class="task-item">';
-                    echo '  <span class="item-text">' . htmlspecialchars($compromisso['descricao']) . ' (' . $compromisso['data_hora'] . ')</span>';
+                    echo '  <span class="item-text" id="texto-tarefa-' . $id_tarefa . '" style="' . $estilo_texto . '">' . htmlspecialchars($compromisso['descricao']) . ' (' . $compromisso['data_hora'] . ')</span>';
                     echo '  <input type="checkbox" class="item-checkbox" ' . $marcado . ' onchange="atualizarStatus(' . $id_tarefa . ', this.checked)" />';
                     echo '</li>';
                   }
-              }
+                  }
               ?>
             </ul>
 
@@ -101,14 +101,53 @@ if (isset($_GET['limpar_concluidos']) && isset($_SESSION['id_usuario'])) {
     function atualizarStatus(idTarefa, isChecked) {
         let novoStatus = isChecked ? 1 : 0;
 
+        // Efeito visual imediato: risca o texto
+        let textoTarefa = document.getElementById('texto-tarefa-' + idTarefa);
+        if (textoTarefa) {
+            textoTarefa.style.textDecoration = isChecked ? 'line-through' : 'none';
+            textoTarefa.style.color = isChecked ? '#aaa' : '#000';
+        }
+
         fetch('atualizar_status.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
             },
             body: 'id=' + idTarefa + '&status=' + novoStatus
+        })
+        .then(response => response.json()) // Agora processamos a resposta como JSON
+        .then(data => {
+            // Se a recompensa foi desbloqueada, mostra o modal
+            if (data.recompensa === true) {
+                document.getElementById('modal-recompensa').style.display = 'flex';
+            }
+        })
+        .catch(error => {
+            console.error("Erro:", error);
         });
     }
+
+    // Função para o botão de fechar o pop-up
+    function fecharModal() {
+        document.getElementById('modal-recompensa').style.display = 'none';
+    }
     </script>
+    <div id="modal-recompensa" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 9999; justify-content: center; align-items: center;">
+        <div style="background: white; padding: 30px; border-radius: 15px; text-align: center; max-width: 400px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); animation: pop 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28);">
+            <i class="fa-solid fa-trophy" style="font-size: 60px; color: #fbbf24; margin-bottom: 15px;"></i>
+            <h2 style="margin: 0 0 10px 0; color: #333; font-family: sans-serif;">Parabéns!</h2>
+            <p style="margin: 0 0 25px 0; color: #666; font-family: sans-serif; font-size: 16px;">Você completou 5 tarefas hoje e desbloqueou uma nova recompensa!</p>
+            <button onclick="fecharModal()" style="padding: 12px 25px; background-color: #82c8fa; color: white; border: none; border-radius: 8px; font-weight: bold; font-size: 16px; cursor: pointer; transition: 0.2s;">
+                Incrível!
+            </button>
+        </div>
+    </div>
+
+    <style>
+        @keyframes pop {
+            0% { transform: scale(0.5); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+    </style>
   </body>
 </html>

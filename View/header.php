@@ -1,6 +1,7 @@
 <?php 
-session_start();
-
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 $nome="";
 $matricula="";
 if(isset($_SESSION['id_usuario'])){ 
@@ -69,7 +70,7 @@ if(isset($_SESSION['matricula'])){
           Ver histórico
           <i class="fa-solid fa-chevron-right arrow-right"></i>
           </a>
-          <a href="TelaRecompensas.php" class="dropdown-item"> <i class="fa-regular fa-star"></i>
+          <a href="TelaRecompensa.php" class="dropdown-item"> <i class="fa-regular fa-star"></i>
          
          
           Ver recompensas
