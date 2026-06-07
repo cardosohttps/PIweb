@@ -253,13 +253,15 @@ body {
   list-style: none;
   flex: 1;
   background-color: #f0f0f0;
-  
   margin-top: -1px;
   border: 1px solid #3fa9f5;
   border-top: none;
   padding: 5px 0;
   display: flex;
   flex-direction: column;
+  min-height: 500px; 
+  border-bottom-left-radius: 8px; 
+  border-bottom-right-radius: 8px;
 }
 
 .task-item {
@@ -311,7 +313,10 @@ body {
   flex: 1; 
   display: flex;
   flex-direction: column;
-  gap: 25px; 
+  gap: 25px;
+  margin-top: 80px; 
+  border-right: 2px solid #3fa9f5; 
+  padding-right: 40px;
 }
 
 .coluna-direita {
@@ -320,9 +325,6 @@ body {
   flex-direction: column;
 }
 
-/* =========================================
-   ESTILO DOS BOTÕES LATERAIS (Blocos)
-   ========================================= */
 .bloco-menu {
   background-color: #fff;
   border: 1px solid #3fa9f5; 

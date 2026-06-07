@@ -11,12 +11,12 @@
         flex-direction: column;
         align-items: center;
         padding: 20px;
-        min-height: calc(100vh - 110px); /* 110px é a altura do seu header */
+        min-height: calc(100vh - 110px); 
     }
 
     .bio-container {
         width: 100%;
-        max-width: 600px; /* Aumentei um pouco para ficar mais elegante */
+        max-width: 600px; 
         background-color: #fff;
         border-radius: 15px;
         box-shadow: 0 10px 25px rgba(0,0,0,0.1);

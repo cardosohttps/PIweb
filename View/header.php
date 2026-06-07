@@ -27,16 +27,17 @@ if(isset($_SESSION['matricula'])){
 <body>
 <header class="header">
       <div class="user-profile">
-        <div class="user-avatar">
-          <?php 
-          if(isset($_SESSION['foto_perfil']) && !empty($_SESSION['foto_perfil']) && $_SESSION['foto_perfil'] !== 'default.png'): ?>
-          <a href="TelaBio.php" style="display: contents;">
-          <img src="<?php echo $_SESSION['foto_perfil']; ?>" alt="Foto de Perfil" class="avatar-img-header">
-          </a>
-          <?php else: ?>
-          <i class="fa-solid fa-user"></i>
-          <?php endif; ?>
-        </div>
+        <div class="user-profile">
+        <a href="TelaBio.php" style="display: flex; align-items: center; text-decoration: none; color: inherit; cursor: pointer;">
+            
+            <div class="user-avatar">
+            <?php 
+            $foto_header = (isset($_SESSION['foto_perfil']) && !empty($_SESSION['foto_perfil']) && $_SESSION['foto_perfil'] !== 'default.png') ? $_SESSION['foto_perfil'] : '1.png';
+            ?>
+            <img src="<?php echo $foto_header; ?>" alt="Foto de Perfil" class="avatar-img-header">
+            </div>
+        </a>
+      </div>
         <div class="user-info">
           <span class="user-name"><div>Nome: <?php echo $nome; ?></div></span>
           <span class="user-matricula"><div>Matrícula: <?php echo $matricula; ?></div></span>

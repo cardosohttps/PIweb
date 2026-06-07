@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Routine Hacker - Principal</title>
-    <link rel="stylesheet" href="TelaPrincipal.css" />
+    <link rel="stylesheet" href="TelaPrincipal.css?v=<?php echo time(); ?>" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -50,11 +50,6 @@ if (isset($_GET['limpar_concluidos']) && isset($_SESSION['id_usuario'])) {
 
       <section class="coluna-direita">
         
-        <nav class="nav-bar">
-          <button class="activities-btn" onclick="window.location.reload();">
-            Atualizar
-          </button>
-        </nav>
 
         <div class="routine-section">
           <h2 class="section-title">Seus compromissos</h2>
