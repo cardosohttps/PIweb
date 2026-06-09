@@ -52,30 +52,16 @@ if(isset($_SESSION['matricula'])){
         </button>
 
         <div class="dropdown-menu" id="myDropdown">
-          <a href="TelaPerfil.php" class="dropdown-item"> <i class="fa-solid fa-pencil"></i>
-         
-         
-          Editar Perfil
+          <a href="TelaPrincipal.php" class="dropdown-item"> <i class="fa-solid fa-pencil"></i>
+          Home
           <i class="fa-solid fa-chevron-right arrow-right"></i>
           </a>
-          <a href="TelaAmigos.php" class="dropdown-item"> <i class="fa-solid fa-magnifying-glass"></i>
-         
-         
-          Encontrar Amigos
-          <i class="fa-solid fa-chevron-right arrow-right"></i>
-          </a>
-          <a href="TelaHistorico.php" class="dropdown-item"> <i class="fa-regular fa-clock"></i>
           
+          <a href="TelaContato.php" class="dropdown-item"> <i class="fa-solid fa-magnifying-glass"></i>
+          Contato
+          <i class="fa-solid fa-chevron-right arrow-right"></i>
+          </a>
           
-          Ver histórico
-          <i class="fa-solid fa-chevron-right arrow-right"></i>
-          </a>
-          <a href="TelaRecompensa.php" class="dropdown-item"> <i class="fa-regular fa-star"></i>
-         
-         
-          Ver recompensas
-          <i class="fa-solid fa-chevron-right arrow-right"></i>
-          </a>
           <a href="logout.php" class="dropdown-item" style=> 
           <i class="fa-solid fa-right-from-bracket"></i> Sair
           <i class="fa-solid fa-chevron-right arrow-right"></i>

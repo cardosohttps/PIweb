@@ -6,8 +6,6 @@ require_once("header.php");
 require_once("conexao.php");
 
 $id_usuario = $_SESSION['id_usuario'];
-
-// Busca as notificações que já foram salvas pelo atualizar_status.php
 $query_notificacoes = "SELECT * FROM notificacoes WHERE id_usuario = ? AND lida = 0 ORDER BY data_criacao DESC";
 $stmt_busca = $conn->prepare($query_notificacoes);
 $stmt_busca->bind_param("i", $id_usuario);
@@ -55,9 +53,9 @@ $notificacoes = $stmt_busca->get_result();
   </head>
   <body>
     
-    <div class="back-link" onclick="history.back()" style="margin: 20px; cursor: pointer; font-weight: bold;">
-        <i class="fa-solid fa-arrow-left"></i> Voltar
-    </div>
+    <div class="back-link" onclick="history.back()">
+    <i class="fa-solid fa-arrow-left"></i> Voltar
+</div>
 
     <main class="container-recompensas">
         <h2><i class="fa-solid fa-star" style="color: #eab308;"></i> Suas Recompensas e Avisos</h2>

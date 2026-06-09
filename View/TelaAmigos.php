@@ -17,9 +17,9 @@ require_once("conexao.php");
     <?php require_once("header.php"); ?>
 
     <main class="main-content">
-        <div class="back-link" onclick="history.back()" style="cursor: pointer; margin-bottom: 20px;">
-            <i class="fa-solid fa-arrow-left"></i> Voltar
-        </div>
+        <div class="back-link" onclick="window.location.href='TelaPrincipal.php'">
+    <i class="fa-solid fa-arrow-left"></i> Voltar
+</div>
 
         <h2 class="page-title">Encontre o perfil de seus amigos</h2>
 
@@ -59,15 +59,6 @@ require_once("conexao.php");
         </div>
 
         <hr style="border: 0; border-top: 1px solid #eee; margin: 30px 0;">
-
-        <div class="friend-notification">
-            <h3 class="notif-title"><i class="fa-solid fa-bell" style="color: #f59e0b;"></i> Notificação de amizade</h3>
-            <div style="background: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); margin-top: 10px;">
-                <p class="notif-text" style="margin: 0 0 10px 0;"><strong>Gustavo</strong> visitou seu perfil.</p>
-                <div class="notif-actions" style="display: flex; gap: 10px;">
-                    <a href="#" class="notif-link" style="color: #82c8fa; text-decoration: none; font-weight: bold; font-size: 14px;">Ver perfil</a>
-                    <a href="#" class="notif-link" style="color: #ef4444; text-decoration: none; font-weight: bold; font-size: 14px;">Ignorar</a>
-                </div>
             </div>
         </div>
     </main>

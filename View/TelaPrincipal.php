@@ -22,9 +22,9 @@ if (isset($_GET['limpar_concluidos']) && isset($_SESSION['id_usuario'])) {
 }
 ?>
 
-    <div class="back-link" onclick="history.back()">
-        <i class="fa-solid fa-arrow-left"></i> Voltar
-    </div>
+    <div class="back-link" onclick="window.location.href='login.php'">
+    <i class="fa-solid fa-arrow-left"></i> Voltar
+</div>
 
     <main class="layout-principal">
       <section class="coluna-esquerda">
