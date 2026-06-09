@@ -6,20 +6,21 @@
 }
 
 body {
-  background-color: #f2fcfd;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  overflow-x: hidden;
+    background-color: #f2fcfd;
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
 }
 
 .header {
-  background-color: #82c8ff;
-  height: 110px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 40px;
+    background-color: #82c8ff;
+    height: 110px;
+    flex-shrink: 0; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
 }
 
 .user-profile {
