@@ -6,35 +6,14 @@ require_once("header.php");
 require_once("conexao.php");
 
 $id_usuario = $_SESSION['id_usuario'];
-$data_hoje = date('Y-m-d');
-$query_tarefas = "SELECT COUNT(*) as total FROM compromissos WHERE id_usuario = ? AND status = 1 AND DATE(data_hora) = ?";
-$stmt = $conn->prepare($query_tarefas);
-$stmt->bind_param("is", $id_usuario, $data_hoje);
-$stmt->execute();
-$resultado_tarefas = $stmt->get_result();
-$row = $resultado_tarefas->fetch_assoc();
-$total_concluidas = $row['total'];
 
-if ($total_concluidas >= 5) {
-    $mensagem_recompensa = "Parabéns! Você concluiu 5 compromissos hoje! Continue assim!";
-    $query_verifica = "SELECT id FROM notificacoes WHERE id_usuario = ? AND DATE(data_criacao) = ? AND mensagem = ?";
-    $stmt_verifica = $conn->prepare($query_verifica);
-    $stmt_verifica->bind_param("iss", $id_usuario, $data_hoje, $mensagem_recompensa);
-    $stmt_verifica->execute();
-    if ($stmt_verifica->get_result()->num_rows === 0) {
-        $query_insere = "INSERT INTO notificacoes (id_usuario, mensagem) VALUES (?, ?)";
-        $stmt_insere = $conn->prepare($query_insere);
-        $stmt_insere->bind_param("is", $id_usuario, $mensagem_recompensa);
-        $stmt_insere->execute();
-    }
-}
+// Busca as notificações que já foram salvas pelo atualizar_status.php
 $query_notificacoes = "SELECT * FROM notificacoes WHERE id_usuario = ? AND lida = 0 ORDER BY data_criacao DESC";
 $stmt_busca = $conn->prepare($query_notificacoes);
 $stmt_busca->bind_param("i", $id_usuario);
 $stmt_busca->execute();
 $notificacoes = $stmt_busca->get_result();
 ?>
-
 <!doctype html>
 <html lang="pt-BR">
   <head>

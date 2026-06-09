@@ -121,12 +121,9 @@ $amigo = mysqli_fetch_assoc($resultado);
         <div class="profile-card">
             
             <?php 
-            // Usa exatamente a mesma regra que fizemos no header.php e na TelaBio
             if (!empty($amigo['foto_perfil']) && $amigo['foto_perfil'] !== 'default.png') {
-                // Se ele tiver foto personalizada, puxa a foto dele
                 $caminho_foto = $amigo['foto_perfil']; 
             } else {
-                // Se não tiver foto ou for o padrão antigo, mostra o avatar de turbante
                 $caminho_foto = '1.png';
             }
             ?>
